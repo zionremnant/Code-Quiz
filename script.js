@@ -41,10 +41,22 @@ var questionArray = [{
 // countdown
 var timerInterval = setInterval(setCountdown, 1000);
 function setCountdown(){
-    if (timeStart) time--;
+    if (timeStart) 
+    time--;
     if(time<=0){
         endQuiz();
         time = 0;
     }
     document.getElementById("timer").innerHTML = time;
 }
+// event listener
+startBtn.addEventListener("click", function(){
+    quiz.style.display="block";
+    home.style.display="none";
+    countdown.style.display="block";
+    document.getElementById("scoreboard").style.display="block";
+    document.getElementById("score").innerHTML=score;
+    setCountdown();
+    setQuizQuestions();
+    timeStart=true;
+});

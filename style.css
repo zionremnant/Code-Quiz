@@ -22,3 +22,16 @@ margin: 0;
     color:midnightblue;
     float: left;
 }
+button{
+    width: auto;
+    height: 50px;
+    color:midnightblue;
+    background-color: lightsalmon;
+    font-size: large;
+    border-radius: 15px;
+}
+.container{
+    font-size: 60px;
+    text-align: center;
+    margin-top: 0px;
+}
