@@ -1,0 +1,10 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 100%;
+    background-color: lightcyan;
+}
+header {
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+}
