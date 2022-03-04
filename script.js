@@ -60,3 +60,139 @@ startBtn.addEventListener("click", function(){
     setQuizQuestions();
     timeStart=true;
 });
+// questions & multiple choices
+function setQuizQuestions(){
+    question.textContent=questionArray[i].question;
+    choice1.textContent=questionArray[i].choice[0];
+    choice2.textContent=questionArray[i].choice[1];
+    choice3.textContent=questionArray[i].choice[2];
+    choice4.textContent=questionArray[i].choice[3];
+};
+choice1.addEventListener('click', function(event){
+    event.stopPropagation();
+    answer=questionArray[i].answer;
+    console.log("answer" + answer);
+    if(0===answer){
+        document.getElementById("answerSelected".innerHTML = "Correct";
+        setTimeout(function(){
+            document.getElementById("answerSelected").innerHTML = "";
+        },
+            1000);
+            score++;
+            document.getElementById("score").innerHTML = score;
+        }
+        else{
+            timeRemaining -= 5;
+            document.getElementById("answerSelected").innerHTML = "Wrong";
+            setTimeout(function(){
+                document.getElementById("answerSelected").innerHTML="";
+        },
+        1000);
+    }
+    if(i >= questionArray.length -1){
+        endQuiz();
+    }
+    else{
+        i++
+        setQuizQuestions();
+    };
+});
+choice2.addEventListener('click', function(event){
+    event.stopPropagation();
+    answer=questionArray[i].answer;
+    console.log(answer);
+    if(1===answer){
+        document.getElementById("answerSelected").innerHTML="Correct";
+        setTimeout(function(){
+            document.getElementById("answerSelected").innerHTML="";
+        },
+        1000);
+        score++
+        document.getElementById("score").innerHTML=score;
+    }
+    else{
+        timeRemaining -= 5;
+        document.getElementById("answerSelected").innerHTML="Wrong";
+        setTimeout(function(){
+            document.getElementById("answerSelected").innerHTML="";
+        },
+        1000);
+    }
+    if(i >= questionArray.length -1){
+        endQuiz();
+    }
+    elseP
+    i++
+    setQuizQuestions();
+};
+});
+choice3.addEventListener('click', function(event){
+    event.stopPropagation();
+    answer=questionArray[i].answer;
+    console.log(answer);
+    if (2===answer){
+        document.getElementById("answerSelected").innerHTML="Correct";
+        setTimeout(function(){
+            document.getElementById("answerSelected").innerHTML="";
+        },
+        1000);
+        score++;
+        document.getElementById("score").innerHTML=score;
+    }
+    else{
+        timeRemaining -= 5;
+        document.getElementById("answerSelected").innerHTML="Wrong";
+        setTimeout(function(){
+            document.getElementById("answerSelected").innerHTML="";
+        },
+        1000);
+    }
+    if (i >= questionArray.length -1){
+        endQuiz();
+    }
+    else{
+        i++
+        setQuizQuestions();
+    };
+});
+choice4.addEventListener('click', function(event){
+    event.stopPropagation();
+    answer=questionArray[i].answer.value;
+    console.log(answer);
+    if(3===answer){
+        document.getElementById("answerSelected").innerHTML="Correct";
+        setTimeout(function(){
+            document.getElementById("answeerSelected").innerHTML="";
+        },
+        1000);
+        score++;
+        document.getElementById("score").innerHTML=score;
+    }
+    else{
+        timeRemaining -= 5;
+        document.getElementById("answerSelected").innerHTML="Wrong";
+        setTimeout(function(){
+            document.getElementById("answerSelected").innerHTML="";
+        },
+        1000);
+    }
+    if(i >= questionArray.length -1){
+        endQuiz();
+    }
+    else{
+        i++
+        setQuizQuestions();
+    };
+});
+// end of the quiz
+function endQuiz(){
+    document.getElementById("gameOver").style.display="block";
+    document.getElementById("quiz").style.display="none";
+    document.getElementById("countdown").style.display="none";
+    document.getElementById("scoreboard").style.display="none";
+    document.getElementById("answerSelected").innerHTML="";
+    document.getElementById("endScore").innerHTML=score;
+}
+// submit
+
+}
