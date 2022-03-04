@@ -9,28 +9,62 @@
 
 <body>
     <header>
-    <!-- scores -->
+    <!-- scores & scoreboard -->
     <section id = "scoreboard" style="display: none">
-        <input type="button" value="View High Scores" click="view_high_scores()">
-            <var id="score"></var>
+        <input type="button" value="View High Scores" click="view_high_scores()"></br>
+        Score:<var id="score"></var>
     </section>
     <!-- time remaining -->
     <section id = "countdown" style="display: none">
-    <span id="timer"></span>
+    Time Remaining: <span id="timer"></span>
     </section>
     </header>
 
+    <!-- home page/intro -->
 <container>
 <div id="home" class="none">
     <h1>Code Quiz</h1>
     <p>Answer the following questions.</p>
+    <p>Good Luck!</p>
+
+    <button id="startBtn">Start!</button>
 </div>
-
-
-
 </container>
-
-
+<!-- quiz: questions & multiple choices -->
+<div id="quiz" style="display: none">
+<h2 id="question"></h2>
+<ul>
+<div id="choice">
+<button id="choice1"></button>
+</div>
+<div id="choice">
+<button id="choice2"></button>
+</div>
+<div id="choice">
+<button id="choice3"></button>
+</div>
+<div id="choice">
+<button id="choice4"></button>
+</div>
+</ul>
+</div>
 </body>
+<!-- answers -->
+<section id="answerSelected">
+</section>
+<div id="gameOver" style="display: none">
+    <h2>Game Over</h2>
+    Score: <var id="endScore"></var>
+    Initials: <input types="text" value="initials" id="initials">
+    <input type="button" value="submit" id="submitInitials" click="submitScore()">
+</div> 
+<!-- high score -->
+<div id="highScoresPage" style="display: none">
+<h2>High Scores</h2>
+<div id="highScores"></div>
+<input type="button" value="Back" id="back" click="home()">
+<!-- reset high score -->
+<input type="button" id="Reset High Scores" value="reset" click="resetHighsScores()">
+</div>
 <script src="./script.js"></script>
 </html>

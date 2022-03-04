@@ -3,8 +3,22 @@
     max-width: 100%;
     background-color: lightcyan;
 }
-header {
+header{
+    justify-content: space-between;
     font-weight: bolder;
     display: flex;
-    justify-content: space-between;
+}
+body{
+text-align: center;
+font-family: 'Courier New', Courier, monospace;
+margin: 0;
+}
+#timer{
+    color: midnightblue;
+    float: right;
+}
+
+#score{
+    color:midnightblue;
+    float: left;
 }

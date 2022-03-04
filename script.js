@@ -19,5 +19,32 @@ var i = 0;
 
 // questions
 var questionArray = [{
-    question "Q: C"
-}]
+    question: "Q: What is/are the type(s) of pop-up boxes available in JavaScript?",
+    choice: ["Confirm", "Alert", "Promp", "All of the Above"],
+    answer: "All of the Above"
+},{
+    question: "Q: What is used to enclose an if/else statement?", choice: ["Parentheses", "Curly Brackets", "Colon", "None of the Above"],
+    answer: "parenthese"
+},{
+    question: "Q: Which element is used to link with JavaScript?",
+    choice: ["<section>", "<meta>", "<link>", "<script>"],
+    answer: "<script>"
+},{
+    question: "Q: How to create an array in JavaScript?",
+    choice: ["var A={}", "var A=()", "var A=[]", "var A=<>"],
+    answer: "var A=[]"
+},{
+    question: "Q: What is a useful tool to debug arrays?",
+    choice: ["Terminal/Bash", "console.log", "Pest Control", "None of the Above"],
+    answer: "console.log"
+}];
+// countdown
+var timerInterval = setInterval(setCountdown, 1000);
+function setCountdown(){
+    if (timeStart) time--;
+    if(time<=0){
+        endQuiz();
+        time = 0;
+    }
+    document.getElementById("timer").innerHTML = time;
+}
