@@ -193,6 +193,22 @@ function endQuiz(){
     document.getElementById("answerSelected").innerHTML="";
     document.getElementById("endScore").innerHTML=score;
 }
-// submit
+// submit with initials
+function submitScore(){
+    highScores.push(document.getElementById("initials").value = " " + score);
+    viewHighScores();
+}
+function viewHighScores(){
+    document.getElementById("quiz").style.display="none";
+    document.getElementById("gameOver").style.display="none";
+    document.getElementById("highScorePage").style.display="block";
+    output="";
+    for(let z=0; z<highScores.length; z++){
+        output=output + " " + highScores[z];
+    }
+    document.getElementById("highScores").innerHTML=output;
 
 }
+
+
+
