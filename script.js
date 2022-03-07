@@ -13,10 +13,9 @@ var choice3 = document.getElementById("choice3");
 var choice4 = document.getElementById("choice4");
 var answer = document.getElementById("answer");
 var score = 0;
-var output = "";
+var output = " ";
 var highScores = [];
-var i = 0;
-// use let?
+let i = 0;
 
 // questions
 var questionArray = [{
@@ -24,7 +23,8 @@ var questionArray = [{
     choice: ["Confirm", "Alert", "Prompt", "All of the Above"],
     answer: 3
 },{
-    question: "Q: What is used to enclose an if/else statement?", choice: ["Parentheses", "Curly Brackets", "Colon", "None of the Above"],
+    question: "Q: What is used to enclose an if/else statement?", 
+    choice: ["Parentheses", "Curly Brackets", "Colon", "None of the Above"],
     answer: 0
 },{
     question: "Q: Which element is used to link with JavaScript?",
@@ -72,25 +72,24 @@ function setQuizQuestions(){
 choice1.addEventListener('click', function(event){
     event.stopPropagation();
     answer=questionArray[i].answer;
-    console.log("answer" + answer);
-    if(0===answer){
+    console.log(answer);
+    if(0 === answer){
         document.getElementById("answerSelected").innerHTML = "Correct";
         setTimeout(function(){
             document.getElementById("answerSelected").innerHTML = "";
         },
-            1000);
-            score++;
-            document.getElementById("score").innerHTML = score;
-        }
-        else{
-            timeRemaining -= 5;
-            document.getElementById("answerSelected").innerHTML = "Wrong";
-            setTimeout(function(){
-                document.getElementById("answerSelected").innerHTML="";
+        1000);
+        score++;
+        document.getElementById("score").innerHTML = score;
+    }
+    else{
+        document.getElementById("answerSelected").innerHTML = "Wrong";
+        setTimeout(function(){
+            document.getElementById("answerSelected").innerHTML = "";
         },
         1000);
     }
-    if(i >= questionArray.length -1){
+    if (i >= questionArray.length -1){
         endQuiz();
     }
     else{
@@ -102,20 +101,19 @@ choice2.addEventListener('click', function(event){
     event.stopPropagation();
     answer=questionArray[i].answer;
     console.log(answer);
-    if(1===answer){
-        document.getElementById("answerSelected").innerHTML="Correct";
+    if(1 === answer){
+        document.getElementById("answerSelected").innerHTML = "Correct";
         setTimeout(function(){
-            document.getElementById("answerSelected").innerHTML="";
+            document.getElementById("answerSelected").innerHTML = "";
         },
         1000);
         score++
         document.getElementById("score").innerHTML=score;
     }
     else{
-        timeRemaining -= 5;
-        document.getElementById("answerSelected").innerHTML="Wrong";
+        document.getElementById("answerSelected").innerHTML = "Wrong";
         setTimeout(function(){
-            document.getElementById("answerSelected").innerHTML="";
+            document.getElementById("answerSelected").innerHTML = "";
         },
         1000);
     }
@@ -131,20 +129,19 @@ choice3.addEventListener('click', function(event){
     event.stopPropagation();
     answer=questionArray[i].answer;
     console.log(answer);
-    if (2===answer){
-        document.getElementById("answerSelected").innerHTML="Correct";
+    if(2 === answer){
+        document.getElementById("answerSelected").innerHTML = "Correct";
         setTimeout(function(){
-            document.getElementById("answerSelected").innerHTML="";
+            document.getElementById("answerSelected").innerHTML = "";
         },
         1000);
         score++;
-        document.getElementById("score").innerHTML=score;
+        document.getElementById("score").innerHTML = score;
     }
     else{
-        timeRemaining -= 5;
-        document.getElementById("answerSelected").innerHTML="Wrong";
+        document.getElementById("answerSelected").innerHTML = "Wrong";
         setTimeout(function(){
-            document.getElementById("answerSelected").innerHTML="";
+            document.getElementById("answerSelected").innerHTML = "";
         },
         1000);
     }
@@ -158,26 +155,25 @@ choice3.addEventListener('click', function(event){
 });
 choice4.addEventListener('click', function(event){
     event.stopPropagation();
-    answer=questionArray[i].answer.value;
+    answer=questionArray[i].answer;
     console.log(answer);
-    if(3===answer){
-        document.getElementById("answerSelected").innerHTML="Correct";
+    if(3 === answer){
+        document.getElementById("answerSelected").innerHTML = "Correct";
         setTimeout(function(){
-            document.getElementById("answeerSelected").innerHTML="";
+            document.getElementById("answerSelected").innerHTML = "";
         },
         1000);
         score++;
-        document.getElementById("score").innerHTML=score;
+        document.getElementById("score").innerHTML = score;
     }
     else{
-        timeRemaining -= 5;
-        document.getElementById("answerSelected").innerHTML="Wrong";
+        document.getElementById("answerSelected").innerHTML = "Wrong";
         setTimeout(function(){
-            document.getElementById("answerSelected").innerHTML="";
+            document.getElementById("answerSelected").innerHTML = "";
         },
         1000);
     }
-    if(i >= questionArray.length -1){
+    if (i >= questionArray.length -1){
         endQuiz();
     }
     else{
@@ -199,14 +195,14 @@ function submitScore(){
     highScores.push(document.getElementById("initials").value + " " + score);
     viewHighScores();
 }
-
+// scoreboard
 function viewHighScores(){
     document.getElementById("quiz").style.display="none";
     document.getElementById("highScoresPage").style.display="block";
-    document.getElementById("finished").style.display="block";
+    document.getElementById("gameOver").style.display="block";
     output="";
-    for(let z=0; z<highScores.length; z++){
-        output = output + " " + highScores[z];
+    for(let k=0; k<highScores.length; k++){
+        output = output + " " + highScores[k];
     }
     document.getElementById("highScores").innerHTML = output;
     clear();
@@ -214,8 +210,8 @@ function viewHighScores(){
 
 
 // refresh to homepage
-    function homepage(){
-        document.getElementById("highScorePage").style.display="none";
+    function home(){
+        document.getElementById("highScoresPage").style.display="none";
         document.getElementById("home").style.display="block";
         clear();
     }
