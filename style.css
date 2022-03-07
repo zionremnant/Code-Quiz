@@ -1,5 +1,5 @@
 *{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     max-width: 100%;
     background-color: lightcyan;
 }
@@ -10,7 +10,7 @@ header{
 }
 body{
 text-align: center;
-font-family: 'Courier New', Courier, monospace;
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 margin: 0;
 }
 #timer{
@@ -24,14 +24,14 @@ margin: 0;
 }
 button{
     width: auto;
-    height: 50px;
+    height: 30px;
     color:midnightblue;
     background-color: lightsalmon;
     font-size: large;
-    border-radius: 15px;
+    border-radius: 25px;
 }
 .container{
-    font-size: 60px;
+    font-size: 40px;
     text-align: center;
     margin-top: 0px;
 }

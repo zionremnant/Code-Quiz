@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Code Quiz</title>
 </head>
@@ -11,7 +11,7 @@
     <header>
     <!-- scores & scoreboard -->
     <section id = "scoreboard" style="display: none">
-        <input type="button" value="View High Scores" click="viewHighScores()"></br>
+        <input type="button" value="View High Scores" onclick="viewHighScores()"></br>
         Score:<var id="score"></var>
     </section>
     <!-- time remaining -->
@@ -26,7 +26,6 @@
     <h1>Code Quiz</h1>
     <p>Answer the following questions.</p>
     <p>Good Luck!</p>
-
     <button id="startBtn">Start!</button>
 </div>
 </container>
@@ -56,15 +55,15 @@
     <h2>Game Over</h2>
     Score: <var id="endScore"></var>
     Initials: <input types="text" value="initials" id="initials">
-    <input type="button" value="submit" id="submitInitials" click="submitScore()">
+    <input type="button" value="submit" id="submitInitials" onclick="submitScore()">
 </div> 
 <!-- high score -->
 <div id="highScoresPage" style="display: none">
 <h2>High Scores</h2>
 <div id="highScores"></div>
-<input type="button" value="back" id="back" click="home()">
+<input type="button" value="back" id="back" onclick="home()">
 <!-- reset high score -->
-<input type="button" id="Reset High Scores" value="reset" click="resetHighsScores()">
+<input type="button" id="Reset High Scores" value="reset" onclick="resetHighsScores()">
 </div>
 <script src="./script.js"></script>
 </html>

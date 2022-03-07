@@ -1,9 +1,10 @@
+// variables
 var startBtn = document.getElementById("startBtn");
 var time = 60;
 var timeRemaining = true;
 var timeStart = false;
 var countdown = document.getElementById("countdown");
-home = document.getElementById("home");
+var home = document.getElementById("home");
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
 var choice1 = document.getElementById("choice1");
@@ -20,23 +21,23 @@ var i = 0;
 // questions
 var questionArray = [{
     question: "Q: What is/are the type(s) of pop-up boxes available in JavaScript?",
-    choice: ["Confirm", "Alert", "Promp", "All of the Above"],
-    answer: "All of the Above"
+    choice: ["Confirm", "Alert", "Prompt", "All of the Above"],
+    answer: 3
 },{
     question: "Q: What is used to enclose an if/else statement?", choice: ["Parentheses", "Curly Brackets", "Colon", "None of the Above"],
-    answer: "parenthese"
+    answer: 0
 },{
     question: "Q: Which element is used to link with JavaScript?",
     choice: ["<section>", "<meta>", "<link>", "<script>"],
-    answer: "<script>"
+    answer: 3
 },{
     question: "Q: How to create an array in JavaScript?",
     choice: ["var A={}", "var A=()", "var A=[]", "var A=<>"],
-    answer: "var A=[]"
+    answer: 2
 },{
     question: "Q: What is a useful tool to debug arrays?",
     choice: ["Terminal/Bash", "console.log", "Pest Control", "None of the Above"],
-    answer: "console.log"
+    answer: 1
 }];
 // countdown
 var timerInterval = setInterval(setCountdown, 1000);
@@ -73,7 +74,7 @@ choice1.addEventListener('click', function(event){
     answer=questionArray[i].answer;
     console.log("answer" + answer);
     if(0===answer){
-        document.getElementById("answerSelected".innerHTML = "Correct";
+        document.getElementById("answerSelected").innerHTML = "Correct";
         setTimeout(function(){
             document.getElementById("answerSelected").innerHTML = "";
         },
@@ -121,10 +122,10 @@ choice2.addEventListener('click', function(event){
     if(i >= questionArray.length -1){
         endQuiz();
     }
-    elseP
-    i++
-    setQuizQuestions();
-};
+    else{
+        i++
+        setQuizQuestions();
+    };
 });
 choice3.addEventListener('click', function(event){
     event.stopPropagation();
@@ -195,20 +196,38 @@ function endQuiz(){
 }
 // submit with initials
 function submitScore(){
-    highScores.push(document.getElementById("initials").value = " " + score);
+    highScores.push(document.getElementById("initials").value + " " + score);
     viewHighScores();
 }
+
 function viewHighScores(){
     document.getElementById("quiz").style.display="none";
-    document.getElementById("gameOver").style.display="none";
-    document.getElementById("highScorePage").style.display="block";
+    document.getElementById("highScoresPage").style.display="block";
+    document.getElementById("finished").style.display="block";
     output="";
     for(let z=0; z<highScores.length; z++){
-        output=output + " " + highScores[z];
+        output = output + " " + highScores[z];
     }
-    document.getElementById("highScores").innerHTML=output;
-
+    document.getElementById("highScores").innerHTML = output;
+    clear();
 }
 
 
-
+// refresh to homepage
+    function homepage(){
+        document.getElementById("highScorePage").style.display="none";
+        document.getElementById("home").style.display="block";
+        clear();
+    }
+//reset highscores
+function resetHighScores(){
+    highScores = [];
+}
+// refresh
+function clear(){
+    time = 60;
+    timeRemaining = true;
+    timeStart = false;
+    i = 0;
+    score = 0;
+}
