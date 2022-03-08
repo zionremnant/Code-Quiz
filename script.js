@@ -16,6 +16,8 @@ var score = 0;
 var output = " ";
 var highScores = [];
 let i = 0;
+var clear = document.getElementById("clear");
+var back = document.getElementById("back");
 
 // questions
 var questionArray = [{
@@ -220,16 +222,17 @@ function viewHighScores(){
         clear();
     }
 //reset highscores
-function resetHighScores(){
-    highScores = [];
-}
+back.addEventListener("click", function (event){
+    location.reload();
+});
+
 // refresh
-function clear(){
+clear.addEventListener("click", function (event){
     time = 60;
     timeRemaining = true;
     timeStart = false;
     i = 0;
     score = 0;
-}
+});
 localStorage.setItem("score", JSON.stringify(answerSelected));
 localStorage.setItem("initials", JSON.stringify(initials));
