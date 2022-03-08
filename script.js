@@ -83,6 +83,7 @@ choice1.addEventListener('click', function(event){
         document.getElementById("score").innerHTML = score;
     }
     else{
+        timeRemaining -= 10;
         document.getElementById("answerSelected").innerHTML = "Wrong";
         setTimeout(function(){
             document.getElementById("answerSelected").innerHTML = "";
@@ -111,6 +112,7 @@ choice2.addEventListener('click', function(event){
         document.getElementById("score").innerHTML=score;
     }
     else{
+        timeRemaining -= 10;
         document.getElementById("answerSelected").innerHTML = "Wrong";
         setTimeout(function(){
             document.getElementById("answerSelected").innerHTML = "";
@@ -139,6 +141,7 @@ choice3.addEventListener('click', function(event){
         document.getElementById("score").innerHTML = score;
     }
     else{
+        timeRemaining -= 10;
         document.getElementById("answerSelected").innerHTML = "Wrong";
         setTimeout(function(){
             document.getElementById("answerSelected").innerHTML = "";
@@ -167,6 +170,7 @@ choice4.addEventListener('click', function(event){
         document.getElementById("score").innerHTML = score;
     }
     else{
+        timeRemaining -= 10;
         document.getElementById("answerSelected").innerHTML = "Wrong";
         setTimeout(function(){
             document.getElementById("answerSelected").innerHTML = "";
@@ -227,3 +231,5 @@ function clear(){
     i = 0;
     score = 0;
 }
+localStorage.setItem("score", JSON.stringify(answerSelected));
+localStorage.setItem("initials", JSON.stringify(initials));
